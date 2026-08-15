@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en" class="lang-en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIGEAT 2026 — Brisbane</title>
+<meta name="description" content="SIGEAT 2026 — Special Interest Group on Eating & Tasting. Brisbane Friday food symposium.">
+<link rel="icon" href="./assets/logo/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#10283c;
+  --blue:#195a87;
+  --blue2:#2678a8;
+  --cream:#f4efe6;
+  --paper:#fff;
+  --ink:#232323;
+  --muted:#626262;
+  --rule:#d6d6d6;
+  --orange:#d77533;
+  --green:#496b58;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:#fff;
+  font-family:"Libre Franklin","PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.65;
+}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+
+/* conference-like top bar */
+.topline{height:7px;background:linear-gradient(90deg,var(--orange) 0 28%,var(--blue2) 28% 72%,var(--green) 72%)}
+.site-header{background:#fff;border-bottom:1px solid var(--rule)}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:30px;min-height:104px}
+.identity{display:flex;align-items:center;gap:18px}
+.mark{
+  display:block;
+  width:320px;
+  max-width:42vw;
+  height:auto;
+}
+.identity-copy{display:none}
+.identity h1{font-size:29px;margin:0;line-height:1.08;letter-spacing:-.7px}
+.identity p{margin:5px 0 0;color:#555;font-size:13px}
+.date-lockup{text-align:right;color:var(--navy);font-size:14px;font-weight:600}
+.date-lockup strong{display:block;font-size:22px;letter-spacing:-.4px}
+nav{background:var(--navy);color:#fff}
+.nav-row{display:flex;min-height:54px;align-items:center;gap:0;overflow-x:auto}
+nav a{
+  color:#fff;padding:17px 18px;font-size:14px;font-weight:600;white-space:nowrap
+}
+nav a:hover{background:#183b57;text-decoration:none}
+
+/* hero: image + hard-edged information overlay, not rounded/card-like */
+.hero{position:relative;min-height:570px;background:#0d2233;overflow:hidden}
+.hero-image{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(9,27,41,.96) 0%,rgba(9,27,41,.76) 42%,rgba(9,27,41,.18) 70%,rgba(9,27,41,.08)),
+    url("https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85/athena%20pic.jpg") center/cover;
+  transform:scale(1.01);
+}
+.hero-content{position:relative;z-index:2;padding:82px 0 80px;color:#fff;max-width:720px}
+.hero-kicker{text-transform:uppercase;letter-spacing:.13em;font-size:13px;font-weight:700;color:#f0b77f}
+.hero h2{font-family:"Noto Serif SC",Georgia,serif;font-size:62px;line-height:1.08;margin:14px 0 18px;letter-spacing:-1.8px}
+.hero p{font-size:20px;max-width:680px;margin:0 0 28px;color:#eef3f6}
+.hero-meta{display:grid;grid-template-columns:repeat(3,max-content);gap:24px 38px;border-top:1px solid rgba(255,255,255,.36);padding-top:22px}
+.hero-meta span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#bdd0dc;display:block}
+.hero-meta strong{font-size:17px;color:#fff}
+.hero-note{margin-top:28px;font-size:13px;color:#d5e0e7}
+
+/* news stripe */
+.news{background:var(--cream);border-bottom:1px solid #ded5c8}
+.news-row{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:18px 0;font-size:14px}
+.news-label{font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.08em}
+
+/* main content */
+main{padding:54px 0 84px}
+.two-col{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:58px}
+.section{margin-bottom:62px}
+.section h2{
+  font-family:"Noto Serif SC",Georgia,serif;
+  color:var(--navy);font-size:36px;line-height:1.2;margin:0 0 22px;
+  padding-bottom:13px;border-bottom:3px solid var(--navy)
+}
+.section h3{font-size:22px;color:var(--navy);margin:28px 0 9px}
+.lead{font-size:18px;color:#333}
+.join-copy p{max-width:760px}
+.quote{
+  margin:28px 0;padding:20px 24px;background:var(--cream);
+  border-left:5px solid var(--orange);font-family:"Noto Serif SC",Georgia,serif;font-size:20px
+}
+
+/* sidebar important dates modeled after conference sites */
+.sidebar-title{
+  background:var(--blue);color:#fff;font-weight:800;padding:15px 18px;
+  text-transform:uppercase;letter-spacing:.06em;font-size:14px
+}
+.date-list{border:1px solid var(--rule);border-top:0}
+.date-item{padding:16px 18px;border-top:1px solid var(--rule)}
+.date-item:first-child{border-top:0}
+.date-item time{font-size:13px;color:var(--orange);font-weight:800;display:block;margin-bottom:3px}
+.date-item strong{font-size:15px}
+.sidebar-block{margin-bottom:30px}
+.sidebar-photo{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.caption{font-size:12px;color:#777;margin-top:7px}
+
+/* proceedings table */
+.paper-list{border-top:1px solid var(--rule)}
+.paper{
+  display:grid;grid-template-columns:112px minmax(0,1fr);gap:24px;
+  padding:22px 0;border-bottom:1px solid var(--rule)
+}
+.paper-no{color:var(--orange);font-size:13px;font-weight:800;letter-spacing:.04em}
+.paper h4{font-size:18px;margin:0 0 4px;color:var(--navy)}
+.paper .track{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--blue)}
+.paper p{margin:8px 0 0;color:#4e4e4e;font-size:14px}
+
+/* score */
+.review-band{display:grid;grid-template-columns:190px 1fr;background:var(--navy);color:#fff;margin-top:28px}
+.score-box{padding:28px;border-right:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;justify-content:center}
+.score-box .score{font-size:58px;font-weight:800;line-height:1}
+.score-box .outof{font-size:13px;color:#bfd0da}
+.review-copy{padding:28px}
+.review-copy strong{color:#f0b77f}
+.review-copy p{margin:7px 0 0}
+
+/* photo strip */
+.photo-strip{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin:28px 0}
+.photo-strip img{width:100%;height:330px;object-fit:cover;display:block}
+.photo-fallback{
+  height:330px;display:flex;align-items:end;padding:24px;
+  background:
+   linear-gradient(0deg,rgba(16,40,60,.78),rgba(16,40,60,.08)),
+   url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1200&q=85") center/cover;
+  color:#fff;font-weight:700
+}
+
+/* program */
+.program{border-top:2px solid var(--navy)}
+.program-row{display:grid;grid-template-columns:150px 1fr;padding:17px 0;border-bottom:1px solid var(--rule)}
+.program-time{font-weight:800;color:var(--orange)}
+.program-row strong{color:var(--navy)}
+.cfp-list{columns:2;column-gap:36px;padding-left:20px}
+.cfp-list li{margin-bottom:8px}
+
+/* venue section */
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.venue-card{border-top:4px solid var(--blue);padding-top:14px}
+.venue-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;margin-bottom:14px}
+.venue-card h3{margin:0 0 4px}
+.venue-card p{font-size:14px;color:#555}
+
+/* footer */
+footer{background:var(--navy);color:#dbe5eb;padding:42px 0}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+footer strong{color:#fff}
+footer .small{font-size:12px;color:#aebfc9;margin-top:18px}
+
+@media(max-width:900px){
+ .two-col{grid-template-columns:1fr}
+ .hero h2{font-size:46px}
+ .hero-meta{grid-template-columns:1fr 1fr}
+ .sidebar{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+ .header-row{align-items:flex-start;padding:20px 0}
+ .date-lockup{display:none}
+}
+@media(max-width:650px){
+ .container{width:min(100% - 28px,1160px)}
+ .identity h1{font-size:22px}
+ .identity p{display:none}
+ .mark{width:245px;max-width:70vw}
+ .hero{min-height:610px}
+ .hero h2{font-size:38px}
+ .hero-meta{grid-template-columns:1fr}
+ .news-row{grid-template-columns:1fr;gap:2px}
+ .paper{grid-template-columns:1fr;gap:3px}
+ .review-band{grid-template-columns:1fr}
+ .score-box{border-right:0;border-bottom:1px solid rgba(255,255,255,.2)}
+ .photo-strip,.venue-grid,.footer-grid{grid-template-columns:1fr}
+ .photo-strip img,.photo-fallback{height:260px}
+ .sidebar{display:block}
+ .cfp-list{columns:1}
+}
+
+/* bilingual language control */
+.lang-switch{
+  display:flex;align-items:center;gap:4px;margin-left:auto;
+  border:1px solid var(--rule);padding:3px;background:#fff;
+}
+.lang-switch button{
+  border:0;background:transparent;color:var(--navy);font:inherit;
+  font-size:12px;font-weight:700;letter-spacing:.04em;padding:7px 10px;
+  cursor:pointer;
+}
+.lang-switch button.active{background:var(--navy);color:#fff}
+.header-actions{display:flex;align-items:center;gap:22px}
+[data-lang]{display:none}
+html.lang-en [data-lang="en"]{display:initial}
+html.lang-zh [data-lang="zh"]{display:initial}
+html.lang-en div[data-lang="en"], html.lang-zh div[data-lang="zh"],
+html.lang-en p[data-lang="en"], html.lang-zh p[data-lang="zh"],
+html.lang-en section[data-lang="en"], html.lang-zh section[data-lang="zh"]{display:block}
+.term-note{font-size:12px;color:#6b6b6b;margin-top:8px}
+@media(max-width:650px){
+  .header-actions{gap:10px}
+  .lang-switch button{padding:6px 8px}
+}
+
+</style>
+</head>
+
+<body>
+<div class="topline"></div>
+
+<header class="site-header">
+  <div class="container header-row">
+    <div class="identity">
+      <img class="mark" src="./assets/logo/sigeat-logo.png" alt="SIGEAT — Special Interest Group on Eating & Tasting, Brisbane">
+    </div>
+    <div class="header-actions">
+      <div class="date-lockup">
+        <strong><span data-lang="en">FRIDAYS · 2026</span><span data-lang="zh">每周五 · 2026</span></strong>
+        <span data-lang="en">Brisbane, Queensland, Australia</span>
+        <span data-lang="zh">澳大利亚 · 昆士兰 · 布里斯班</span>
+      </div>
+      <div class="lang-switch" aria-label="Language">
+        <button type="button" data-set-lang="en">EN</button>
+        <button type="button" data-set-lang="zh">中文</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="container nav-row">
+    <a href="#home"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+    <a href="#join"><span data-lang="en">About</span><span data-lang="zh">简介</span></a>
+    <a href="#dates"><span data-lang="en">Important Dates</span><span data-lang="zh">重要时间</span></a>
+    <a href="#program"><span data-lang="en">Session #02</span><span data-lang="zh">第 02 届</span></a>
+    <a href="#papers"><span data-lang="en">Session #01</span><span data-lang="zh">第 01 届</span></a>
+    <a href="#proceedings"><span data-lang="en">Proceedings</span><span data-lang="zh">会议记录</span></a>
+    <a href="#venue"><span data-lang="en">Venues</span><span data-lang="zh">餐厅</span></a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-image"></div>
+  <div class="container hero-content">
+    <div class="hero-kicker">
+      <span data-lang="en">Session #02 · Call for Participation</span>
+      <span data-lang="zh">第 02 届 · 参会通知</span>
+    </div>
+    <h2>
+      <span data-lang="en">Greek Cuisine Retrieval</span>
+      <span data-lang="zh">希腊菜检索</span>
+    </h2>
+    <p data-lang="en">The next SIGEAT session will be held at Little Greek Taverna. We will taste, compare and review a selection of Greek dishes, continuing our long-running experiment in Food Retrieval.</p>
+    <p data-lang="zh">下一届 SIGEAT 将在 Little Greek Taverna 举行。我们会共同品尝、比较并记录一组希腊菜，继续这项长期的 Food Retrieval 美食实验。</p>
+    <div class="hero-meta">
+      <div><span><span data-lang="en">Venue</span><span data-lang="zh">餐厅</span></span><strong>Little Greek Taverna</strong></div>
+      <div><span><span data-lang="en">Day</span><span data-lang="zh">日期</span></span><strong><span data-lang="en">Friday</span><span data-lang="zh">周五</span></strong></div>
+      <div><span><span data-lang="en">Time</span><span data-lang="zh">时间</span></span><strong>18:30</strong></div>
+    </div>
+    <div class="hero-note">From Information Retrieval to Food Retrieval. · Eat. Review. Rank. Repeat.</div>
+  </div>
+</section>
+
+<div class="news">
+  <div class="container news-row">
+    <div class="news-label"><span data-lang="en">Latest</span><span data-lang="zh">最新动态</span></div>
+    <div data-lang="en"><strong>Session #01 proceedings are available.</strong> Italian Street Kitchen received an overall score of <strong>3.5/5</strong>. Session #02 is now open for participation.</div>
+    <div data-lang="zh"><strong>第 01 届会议记录已经发布。</strong> Italian Street Kitchen 总评分为 <strong>3.5/5</strong>。第 02 届现已开放参加。</div>
+  </div>
+</div>
+
+<main>
+<div class="container two-col">
+  <div>
+    <section class="section join-copy" id="join">
+      <h2><span data-lang="en">About SIGEAT</span><span data-lang="zh">关于 SIGEAT</span></h2>
+      <p class="lead" data-lang="en">SIGEAT is a Friday dining series that borrows the structure of an academic conference to make shared meals easier to record, compare and remember.</p>
+      <p class="lead" data-lang="zh">SIGEAT 是一个周五聚餐系列：借用学术会议的组织结构，把朋友聚餐变成一套可记录、可比较、可长期回看的共同活动。</p>
+      <p data-lang="en">A restaurant is the <strong>Venue</strong>; one dinner is a <strong>Session</strong>; each ordered dish is recorded as a <strong>Paper</strong>; tasting together is <strong>Peer Review</strong>; and the post-dinner archive becomes the <strong>Proceedings</strong>. These terms are retained only where they correspond to something that actually happens at the table.</p>
+      <p data-lang="zh">餐厅对应 <strong>Venue</strong>；一次聚餐对应一个 <strong>Session</strong>；每道菜作为一篇 <strong>Paper</strong> 记录；共同品尝对应 <strong>Peer Review</strong>；饭后形成的完整归档称为 <strong>Proceedings</strong>。只有在桌上确实存在对应行为时，网站才保留这些学术术语。</p>
+      <div class="quote">“From Information Retrieval to Food Retrieval.”</div>
+    </section>
+
+    <section class="section" id="papers">
+      <h2><span data-lang="en">Session #01 · Italian Cuisine Retrieval</span><span data-lang="zh">第 01 届 · 意大利菜检索</span></h2>
+      <p data-lang="en">Held at <strong>Italian Street Kitchen, West End, Brisbane</strong>. Four participants shared five dishes. Total bill: A$147; approximately A$37.50 per person.</p>
+      <p data-lang="zh">地点：<strong>Italian Street Kitchen, West End, Brisbane</strong>。共 4 人参加，分享 5 道菜。实际总账单 A$147，人均约 A$37.50。</p>
+
+      <div class="photo-strip">
+        <div class="photo-fallback"><span data-lang="en">Session #01 · Italian Cuisine Retrieval</span><span data-lang="zh">第 01 届 · 意大利菜检索</span></div>
+        <img src="https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_900,h_700,al_c,q_82/athena%20pic.jpg" alt="Greek food at Little Greek Taverna">
+      </div>
+
+      <div class="paper-list">
+        <article class="paper">
+          <div class="paper-no">PAPER 001</div>
+          <div><div class="track">Classical Foundations</div><h4>Margherita Pizza</h4>
+          <p data-lang="en">A dependable baseline: well executed and balanced, but limited in novelty. Solid enough to order again, though not a Best Paper contender.</p>
+          <p data-lang="zh">可靠的经典基线：完成度和均衡性都合格，但新意有限。属于可以再次点的稳妥选择，但不足以竞争 Best Paper。</p></div>
+        </article>
+        <article class="paper">
+          <div class="paper-no">PAPER 002</div>
+          <div><div class="track">Applied Italian Systems</div><h4>Prosciutto Pizza</h4>
+          <p data-lang="en">A richer variation on the classic pizza template. The prosciutto adds a clear flavour improvement, but the dish remains evolutionary rather than surprising.</p>
+          <p data-lang="zh">在经典披萨结构上的强化版本。Prosciutto 带来了清晰的风味提升，但整体仍属于稳健改良，而不是令人意外的突破。</p></div>
+        </article>
+        <article class="paper">
+          <div class="paper-no">PAPER 003</div>
+          <div><div class="track">Pasta &amp; Large-Scale Systems</div><h4>Casarecce Lamb</h4>
+          <p data-lang="en">The main pasta contribution of the session. It added useful variety to an otherwise pizza-heavy table and had one of the more distinctive profiles.</p>
+          <p data-lang="zh">本届主要的意面菜品，为偏重披萨的整桌菜单提供了必要多样性，也是辨识度相对更高的一道。</p></div>
+        </article>
+        <article class="paper">
+          <div class="paper-no">PAPER 004</div>
+          <div><div class="track">Meat-Enhanced Retrieval</div><h4>Italian Sausage Pizza</h4>
+          <p data-lang="en">Clear savoury character and reliable execution. It met the session's acceptance bar, but did not dominate the table.</p>
+          <p data-lang="zh">肉香明确、完成度可靠，达到了本届的录用标准，但没有形成明显的全桌优势。</p></div>
+        </article>
+        <article class="paper">
+          <div class="paper-no">PAPER 005</div>
+          <div><div class="track">Shared Plate</div><h4>Woodfire Bread Plate with Prosciutto</h4>
+          <p data-lang="en">Best understood simply as a shared starter. It supported the meal well, but was not intended to function as the session's headline dish.</p>
+          <p data-lang="zh">更准确地说，它就是一道共享前菜：很好地承担了配餐和分享作用，但并不是本届的核心菜品。</p></div>
+        </article>
+      </div>
+
+      <div class="review-band" id="proceedings">
+        <div class="score-box"><div class="score">3.5</div><div class="outof"><span data-lang="en">OUT OF 5 · WEAK ACCEPT</span><span data-lang="zh">满分 5 分 · WEAK ACCEPT</span></div></div>
+        <div class="review-copy">
+          <strong><span data-lang="en">SESSION REVIEW</span><span data-lang="zh">本届总结</span></strong>
+          <p data-lang="en">Reliable overall quality with no obvious failures, but limited novelty and no single dish with a decisive advantage. No Best Paper was awarded.</p>
+          <p data-lang="zh">整体稳定，没有明显踩雷，但 novelty 与惊喜感有限，也没有一道菜形成压倒性优势，因此本届不颁发 Best Paper。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="program">
+      <h2><span data-lang="en">Session #02 · Greek Cuisine Retrieval</span><span data-lang="zh">第 02 届 · 希腊菜检索</span></h2>
+      <p class="lead"><span data-lang="en">Little Greek Taverna · Friday · 18:30</span><span data-lang="zh">Little Greek Taverna · 周五 · 18:30</span></p>
+      <div class="program">
+        <div class="program-row"><div class="program-time">Before 18:30</div><div><strong><span data-lang="en">Arrival</span><span data-lang="zh">到场</span></strong><br><span data-lang="en">Meet at the venue and settle the table.</span><span data-lang="zh">在餐厅集合、入座，确认参与人数。</span></div></div>
+        <div class="program-row"><div class="program-time">18:30</div><div><strong><span data-lang="en">Ordering · Paper Submission</span><span data-lang="zh">点菜 · Paper Submission</span></strong><br><span data-lang="en">Choose the dishes for the session and assign paper numbers for the record.</span><span data-lang="zh">确定本届菜品，并为后续记录分配 Paper 编号。</span></div></div>
+        <div class="program-row"><div class="program-time">On serving</div><div><strong><span data-lang="en">Tasting · Peer Review</span><span data-lang="zh">品尝 · Peer Review</span></strong><br><span data-lang="en">Taste together and discuss Taste, Portion, Value, Novelty and Reorder Probability.</span><span data-lang="zh">共同品尝，并围绕 Taste、Portion、Value、Novelty 与 Reorder Probability 讨论。</span></div></div>
+        <div class="program-row"><div class="program-time">Before the bill</div><div><strong><span data-lang="en">Session Decision</span><span data-lang="zh">本届评分</span></strong><br><span data-lang="en">Agree on the overall 1–5 score and select a Best Paper only if there is a clear favourite.</span><span data-lang="zh">形成 1–5 分总评；只有在大家存在明确共识时才评选 Best Paper。</span></div></div>
+        <div class="program-row"><div class="program-time">After dinner</div><div><strong><span data-lang="en">Proceedings</span><span data-lang="zh">会议记录归档</span></strong><br><span data-lang="en">Record the venue, dishes, prices, reviews, photos, overall score and next venue.</span><span data-lang="zh">归档餐厅、菜品、价格、点评、照片、总评分以及下一届餐厅。</span></div></div>
+      </div>
+
+      <h3><span data-lang="en">Menu Focus</span><span data-lang="zh">本届菜品方向</span></h3>
+      <ul class="cfp-list">
+        <li>Souvlaki</li>
+        <li>Halloumi</li>
+        <li>Lamb</li>
+        <li>Pita &amp; Dips</li>
+        <li>Greek Salad</li>
+        <li><span data-lang="en">Dessert</span><span data-lang="zh">甜点</span></li>
+      </ul>
+    </section>
+
+    <section class="section" id="venue">
+      <h2><span data-lang="en">Venues</span><span data-lang="zh">餐厅</span></h2>
+      <div class="venue-grid">
+        <article class="venue-card">
+          <img src="https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_900,h_650,al_c,q_85/athena%20pic.jpg" alt="Little Greek Taverna Greek dishes">
+          <h3>Little Greek Taverna</h3>
+          <p><strong><span data-lang="en">Upcoming · Session #02</span><span data-lang="zh">下一届 · Session #02</span></strong><br><span data-lang="en">West End, Brisbane · Greek cuisine · Friday 18:30</span><span data-lang="zh">West End, Brisbane · 希腊菜 · 周五 18:30</span></p>
+        </article>
+        <article class="venue-card">
+          <div class="photo-fallback" style="height:auto;aspect-ratio:16/10">Italian Street Kitchen · West End</div>
+          <h3>Italian Street Kitchen</h3>
+          <p><strong><span data-lang="en">Completed · Session #01</span><span data-lang="zh">已完成 · Session #01</span></strong><br><span data-lang="en">West End, Brisbane · Italian cuisine · Overall score 3.5/5</span><span data-lang="zh">West End, Brisbane · 意大利菜 · 总评分 3.5/5</span></p>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-block" id="dates">
+      <div class="sidebar-title"><span data-lang="en">Important Dates</span><span data-lang="zh">重要时间</span></div>
+      <div class="date-list">
+        <div class="date-item"><time><span data-lang="en">SESSION #01 · COMPLETED</span><span data-lang="zh">第 01 届 · 已完成</span></time><strong><span data-lang="en">Proceedings available</span><span data-lang="zh">会议记录已发布</span></strong><br>Italian Street Kitchen · 3.5/5</div>
+        <div class="date-item"><time><span data-lang="en">FRIDAY · 18:30</span><span data-lang="zh">周五 · 18:30</span></time><strong><span data-lang="en">Session #02 dinner</span><span data-lang="zh">第 02 届聚餐</span></strong><br>Little Greek Taverna</div>
+        <div class="date-item"><time><span data-lang="en">WHEN ORDERING</span><span data-lang="zh">点菜时</span></time><strong><span data-lang="en">Dish selection closes</span><span data-lang="zh">确定本届菜品</span></strong></div>
+        <div class="date-item"><time><span data-lang="en">WHEN SERVED</span><span data-lang="zh">上菜后</span></time><strong><span data-lang="en">Tasting begins</span><span data-lang="zh">开始共同品尝</span></strong></div>
+        <div class="date-item"><time><span data-lang="en">BEFORE THE BILL</span><span data-lang="zh">结账前</span></time><strong><span data-lang="en">Overall score &amp; Best Paper</span><span data-lang="zh">总评分与 Best Paper</span></strong></div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title"><span data-lang="en">Session #02</span><span data-lang="zh">第 02 届</span></div>
+      <img class="sidebar-photo" src="https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_700,h_700,al_c,q_82/athena%20pic.jpg" alt="Greek cuisine">
+      <div class="caption"><span data-lang="en">Greek cuisine · upcoming session.</span><span data-lang="zh">希腊菜 · 下一届。</span></div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title"><span data-lang="en">Evaluation Criteria</span><span data-lang="zh">评价维度</span></div>
+      <div class="date-list">
+        <div class="date-item"><strong>Taste</strong><br><span data-lang="en">Flavour and overall execution</span><span data-lang="zh">味道与整体完成度</span></div>
+        <div class="date-item"><strong>Portion</strong><br><span data-lang="en">Serving size and sharing experience</span><span data-lang="zh">份量与多人分享体验</span></div>
+        <div class="date-item"><strong>Value</strong><br><span data-lang="en">Price relative to the experience</span><span data-lang="zh">价格与体验是否匹配</span></div>
+        <div class="date-item"><strong>Novelty</strong><br><span data-lang="en">Distinctiveness and surprise</span><span data-lang="zh">辨识度与惊喜</span></div>
+        <div class="date-item"><strong>Reorder Probability</strong><br><span data-lang="en">Would we order it again?</span><span data-lang="zh">下次是否愿意再点</span></div>
+      </div>
+    </div>
+  </aside>
+</div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>SIGEAT 2026 · Brisbane</strong><br>
+      Special Interest Group on Eating &amp; Tasting<br>
+      From Information Retrieval to Food Retrieval.
+    </div>
+    <div>
+      <strong><span data-lang="en">Current archive</span><span data-lang="zh">当前归档</span></strong><br>
+      Session #01 · Italian Street Kitchen<br>
+      Session #02 · Little Greek Taverna
+    </div>
+  </div>
+  <div class="container small"><span data-lang="en">Independent private food symposium. Academic-conference language is used as a playful recording framework; SIGEAT is not affiliated with ACM or SIGIR.</span><span data-lang="zh">独立的私人美食聚餐项目。学术会议术语仅作为记录框架使用；SIGEAT 与 ACM 或 SIGIR 无隶属关系。</span></div>
+</footer>
+
+<script>
+(function(){
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('[data-set-lang]');
+  function setLang(lang){
+    root.classList.remove('lang-en','lang-zh');
+    root.classList.add(lang === 'zh' ? 'lang-zh' : 'lang-en');
+    root.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    localStorage.setItem('sigeat-lang', lang);
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.setLang === lang));
+    document.title = lang === 'zh' ? 'SIGEAT 2026 — 布里斯班' : 'SIGEAT 2026 — Brisbane';
+  }
+  const saved = localStorage.getItem('sigeat-lang');
+  const preferred = saved || (navigator.language && navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en');
+  setLang(preferred);
+  buttons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.setLang)));
+})();
+</script>
+</body>
+
+</html>
