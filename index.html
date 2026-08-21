@@ -63,8 +63,8 @@ nav a:hover{background:#183b57;text-decoration:none}
 .hero-image{
   position:absolute;inset:0;
   background:
-    linear-gradient(90deg,rgba(9,27,41,.96) 0%,rgba(9,27,41,.76) 42%,rgba(9,27,41,.18) 70%,rgba(9,27,41,.08)),
-    url("https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85/athena%20pic.jpg") center/cover;
+    radial-gradient(circle at 78% 35%,rgba(38,120,168,.5),transparent 34%),
+    linear-gradient(115deg,#091b29 0%,#10283c 48%,#195a87 100%);
   transform:scale(1.01);
 }
 .hero-content{position:relative;z-index:2;padding:82px 0 80px;color:#fff;max-width:720px}
@@ -142,6 +142,11 @@ main{padding:54px 0 84px}
    url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1200&q=85") center/cover;
   color:#fff;font-weight:700
 }
+.photo-fallback.photo-greek{
+  background:
+   linear-gradient(0deg,rgba(16,40,60,.78),rgba(16,40,60,.08)),
+   url("https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_85/athena%20pic.jpg") center/cover
+}
 
 /* program */
 .program{border-top:2px solid var(--navy)}
@@ -157,6 +162,10 @@ main{padding:54px 0 84px}
 .venue-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;margin-bottom:14px}
 .venue-card h3{margin:0 0 4px}
 .venue-card p{font-size:14px;color:#555}
+.venue-placeholder{
+  aspect-ratio:16/10;display:flex;align-items:end;padding:24px;margin-bottom:14px;
+  background:linear-gradient(135deg,var(--navy),var(--blue2));color:#fff;font-weight:700
+}
 
 /* footer */
 footer{background:var(--navy);color:#dbe5eb;padding:42px 0}
@@ -244,9 +253,8 @@ html.lang-en section[data-lang="en"], html.lang-zh section[data-lang="zh"]{displ
     <a href="#home"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
     <a href="#join"><span data-lang="en">About</span><span data-lang="zh">简介</span></a>
     <a href="#dates"><span data-lang="en">Important Dates</span><span data-lang="zh">重要时间</span></a>
-    <a href="#program"><span data-lang="en">Session #02</span><span data-lang="zh">第 02 届</span></a>
-    <a href="#papers"><span data-lang="en">Session #01</span><span data-lang="zh">第 01 届</span></a>
-    <a href="#proceedings"><span data-lang="en">Proceedings</span><span data-lang="zh">会议记录</span></a>
+    <a href="#session-02">Session #02</a>
+    <a href="#session-01">Session #01</a>
     <a href="#venue"><span data-lang="en">Venues</span><span data-lang="zh">餐厅</span></a>
   </div>
 </nav>
@@ -255,19 +263,14 @@ html.lang-en section[data-lang="en"], html.lang-zh section[data-lang="zh"]{displ
   <div class="hero-image"></div>
   <div class="container hero-content">
     <div class="hero-kicker">
-      <span data-lang="en">Session #02 · Call for Participation</span>
-      <span data-lang="zh">第 02 届 · 参会通知</span>
+      Session #03 · Pending
     </div>
-    <h2>
-      <span data-lang="en">Greek Cuisine Retrieval</span>
-      <span data-lang="zh">希腊菜检索</span>
-    </h2>
-    <p data-lang="en">The next SIGEAT session will be held at Little Greek Taverna. We will taste, compare and review a selection of Greek dishes, continuing our long-running experiment in Food Retrieval.</p>
-    <p data-lang="zh">下一届 SIGEAT 将在 Little Greek Taverna 举行。我们会共同品尝、比较并记录一组希腊菜，继续这项长期的 Food Retrieval 美食实验。</p>
+    <h2>Next Venue TBA</h2>
+    <p>The next SIGEAT session is scheduled for Friday, 28 August 2026. The venue and cuisine are still to be announced.</p>
     <div class="hero-meta">
-      <div><span><span data-lang="en">Venue</span><span data-lang="zh">餐厅</span></span><strong>Little Greek Taverna</strong></div>
-      <div><span><span data-lang="en">Day</span><span data-lang="zh">日期</span></span><strong><span data-lang="en">Friday</span><span data-lang="zh">周五</span></strong></div>
-      <div><span><span data-lang="en">Time</span><span data-lang="zh">时间</span></span><strong>18:30</strong></div>
+      <div><span>Date</span><strong>Friday, 28 August 2026</strong></div>
+      <div><span>Venue</span><strong>TBA</strong></div>
+      <div><span>Status</span><strong>Pending</strong></div>
     </div>
     <div class="hero-note">From Information Retrieval to Food Retrieval. · Eat. Review. Rank. Repeat.</div>
   </div>
@@ -276,8 +279,7 @@ html.lang-en section[data-lang="en"], html.lang-zh section[data-lang="zh"]{displ
 <div class="news">
   <div class="container news-row">
     <div class="news-label"><span data-lang="en">Latest</span><span data-lang="zh">最新动态</span></div>
-    <div data-lang="en"><strong>Session #01 proceedings are available.</strong> Italian Street Kitchen received an overall score of <strong>3.5/5</strong>. Session #02 is now open for participation.</div>
-    <div data-lang="zh"><strong>第 01 届会议记录已经发布。</strong> Italian Street Kitchen 总评分为 <strong>3.5/5</strong>。第 02 届现已开放参加。</div>
+    <div><strong>Session #02 proceedings are available.</strong> The Little Greek Taverna received an overall score of <strong>4/5</strong>, with Garlic Prawns Pasta awarded Best Paper. Session #03 is pending.</div>
   </div>
 </div>
 
@@ -293,14 +295,65 @@ html.lang-en section[data-lang="en"], html.lang-zh section[data-lang="zh"]{displ
       <div class="quote">“From Information Retrieval to Food Retrieval.”</div>
     </section>
 
-    <section class="section" id="papers">
+    <section class="section" id="session-02">
+      <h2>Session #02 · Greek Cuisine Retrieval</h2>
+      <p>Held at <strong>The Little Greek Taverna, West End, Brisbane</strong> on 21 August 2026. The session covered six shared dishes and received an overall score of <strong>4/5</strong>.</p>
+
+      <div class="photo-strip">
+        <div class="photo-fallback photo-greek">Session #02 · Greek Cuisine Retrieval</div>
+        <img src="https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_900,h_700,al_c,q_82/athena%20pic.jpg" alt="Greek food at The Little Greek Taverna">
+      </div>
+
+      <div class="paper-list">
+        <article class="paper">
+          <div class="paper-no">PAPER 001</div>
+          <div><div class="track">Shared Foundations</div><h4>Pita Bread</h4>
+          <p>One of the session favourites. A simple but enjoyable shared starter that worked particularly well as part of a larger group meal.</p></div>
+        </article>
+        <article class="paper">
+          <div class="paper-no">PAPER 002</div>
+          <div><div class="track">Classical Greek Systems</div><h4>Moussaka</h4>
+          <p>A good and recommendable dish, although it did not reach the same level as the session's standout pasta.</p></div>
+        </article>
+        <article class="paper">
+          <div class="paper-no">PAPER 003</div>
+          <div><div class="track">Grilled Meat Retrieval</div><h4>Lamb Souvlaki</h4>
+          <p>Better than the lamb dish from the previous session, but noticeably too salty and therefore unlikely to suit everyone.</p></div>
+        </article>
+        <article class="paper">
+          <div class="paper-no">PAPER 004</div>
+          <div><div class="track">Seafood Track</div><h4>Octopus</h4>
+          <p>Good and easy to recommend, but not as memorable or well balanced as the Garlic Prawns Pasta.</p></div>
+        </article>
+        <article class="paper">
+          <div class="paper-no">PAPER 005</div>
+          <div><div class="track">Traditional Shared Plate</div><h4>Dolmades</h4>
+          <p>Included as part of the shared Greek spread. No separate dish-specific review was recorded for this paper.</p></div>
+        </article>
+        <article class="paper">
+          <div class="paper-no">PAPER 006</div>
+          <div><div class="track">Best Paper · Pasta &amp; Seafood Systems</div><h4>Garlic Prawns Pasta</h4>
+          <p>The surprise standout of the session: creamy, more balanced than the other dishes and worth ordering again. Its richness makes one moderate serving satisfying, while the small group portion meant two plates were needed for the table.</p></div>
+        </article>
+      </div>
+
+      <div class="review-band">
+        <div class="score-box"><div class="score">4.0</div><div class="outof">OUT OF 5 · ACCEPT</div></div>
+        <div class="review-copy">
+          <strong>SESSION REVIEW · BEST PAPER: GARLIC PRAWNS PASTA</strong>
+          <p>Good overall quality and fair value for the experience, with Garlic Prawns Pasta and Pita Bread the clearest favourites. Portions were small—the pasta required two plates for the group—and several rich dishes could become heavy in larger quantities. The menu worked best as a group meal where everyone could taste a little of each dish. Novelty was limited overall, but the session still earned a strong 4/5.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="session-01">
       <h2><span data-lang="en">Session #01 · Italian Cuisine Retrieval</span><span data-lang="zh">第 01 届 · 意大利菜检索</span></h2>
       <p data-lang="en">Held at <strong>Italian Street Kitchen, West End, Brisbane</strong>. Four participants shared five dishes. Total bill: A$147; approximately A$37.50 per person.</p>
       <p data-lang="zh">地点：<strong>Italian Street Kitchen, West End, Brisbane</strong>。共 4 人参加，分享 5 道菜。实际总账单 A$147，人均约 A$37.50。</p>
 
       <div class="photo-strip">
         <div class="photo-fallback"><span data-lang="en">Session #01 · Italian Cuisine Retrieval</span><span data-lang="zh">第 01 届 · 意大利菜检索</span></div>
-        <img src="https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_900,h_700,al_c,q_82/athena%20pic.jpg" alt="Greek food at Little Greek Taverna">
+        <div class="photo-fallback">Italian Street Kitchen · Session #01 Proceedings</div>
       </div>
 
       <div class="paper-list">
@@ -336,7 +389,7 @@ html.lang-en section[data-lang="en"], html.lang-zh section[data-lang="zh"]{displ
         </article>
       </div>
 
-      <div class="review-band" id="proceedings">
+      <div class="review-band">
         <div class="score-box"><div class="score">3.5</div><div class="outof"><span data-lang="en">OUT OF 5 · WEAK ACCEPT</span><span data-lang="zh">满分 5 分 · WEAK ACCEPT</span></div></div>
         <div class="review-copy">
           <strong><span data-lang="en">SESSION REVIEW</span><span data-lang="zh">本届总结</span></strong>
@@ -346,35 +399,24 @@ html.lang-en section[data-lang="en"], html.lang-zh section[data-lang="zh"]{displ
       </div>
     </section>
 
-    <section class="section" id="program">
-      <h2><span data-lang="en">Session #02 · Greek Cuisine Retrieval</span><span data-lang="zh">第 02 届 · 希腊菜检索</span></h2>
-      <p class="lead"><span data-lang="en">Little Greek Taverna · Friday · 18:30</span><span data-lang="zh">Little Greek Taverna · 周五 · 18:30</span></p>
-      <div class="program">
-        <div class="program-row"><div class="program-time">Before 18:30</div><div><strong><span data-lang="en">Arrival</span><span data-lang="zh">到场</span></strong><br><span data-lang="en">Meet at the venue and settle the table.</span><span data-lang="zh">在餐厅集合、入座，确认参与人数。</span></div></div>
-        <div class="program-row"><div class="program-time">18:30</div><div><strong><span data-lang="en">Ordering · Paper Submission</span><span data-lang="zh">点菜 · Paper Submission</span></strong><br><span data-lang="en">Choose the dishes for the session and assign paper numbers for the record.</span><span data-lang="zh">确定本届菜品，并为后续记录分配 Paper 编号。</span></div></div>
-        <div class="program-row"><div class="program-time">On serving</div><div><strong><span data-lang="en">Tasting · Peer Review</span><span data-lang="zh">品尝 · Peer Review</span></strong><br><span data-lang="en">Taste together and discuss Taste, Portion, Value, Novelty and Reorder Probability.</span><span data-lang="zh">共同品尝，并围绕 Taste、Portion、Value、Novelty 与 Reorder Probability 讨论。</span></div></div>
-        <div class="program-row"><div class="program-time">Before the bill</div><div><strong><span data-lang="en">Session Decision</span><span data-lang="zh">本届评分</span></strong><br><span data-lang="en">Agree on the overall 1–5 score and select a Best Paper only if there is a clear favourite.</span><span data-lang="zh">形成 1–5 分总评；只有在大家存在明确共识时才评选 Best Paper。</span></div></div>
-        <div class="program-row"><div class="program-time">After dinner</div><div><strong><span data-lang="en">Proceedings</span><span data-lang="zh">会议记录归档</span></strong><br><span data-lang="en">Record the venue, dishes, prices, reviews, photos, overall score and next venue.</span><span data-lang="zh">归档餐厅、菜品、价格、点评、照片、总评分以及下一届餐厅。</span></div></div>
-      </div>
-
-      <h3><span data-lang="en">Menu Focus</span><span data-lang="zh">本届菜品方向</span></h3>
-      <ul class="cfp-list">
-        <li>Souvlaki</li>
-        <li>Halloumi</li>
-        <li>Lamb</li>
-        <li>Pita &amp; Dips</li>
-        <li>Greek Salad</li>
-        <li><span data-lang="en">Dessert</span><span data-lang="zh">甜点</span></li>
-      </ul>
+    <section class="section" id="next-session">
+      <h2>Session #03 · Pending</h2>
+      <p class="lead">Friday, 28 August 2026 · Venue TBA</p>
+      <p>The next SIGEAT session has been scheduled, but the venue, cuisine and start time are still to be announced.</p>
     </section>
 
     <section class="section" id="venue">
       <h2><span data-lang="en">Venues</span><span data-lang="zh">餐厅</span></h2>
       <div class="venue-grid">
         <article class="venue-card">
+          <div class="venue-placeholder">Session #03 · Venue TBA</div>
+          <h3>To Be Announced</h3>
+          <p><strong>Upcoming · Session #03</strong><br>Friday, 28 August 2026 · Venue and cuisine pending</p>
+        </article>
+        <article class="venue-card">
           <img src="https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_900,h_650,al_c,q_85/athena%20pic.jpg" alt="Little Greek Taverna Greek dishes">
-          <h3>Little Greek Taverna</h3>
-          <p><strong><span data-lang="en">Upcoming · Session #02</span><span data-lang="zh">下一届 · Session #02</span></strong><br><span data-lang="en">West End, Brisbane · Greek cuisine · Friday 18:30</span><span data-lang="zh">West End, Brisbane · 希腊菜 · 周五 18:30</span></p>
+          <h3>The Little Greek Taverna</h3>
+          <p><strong>Completed · Session #02</strong><br>West End, Brisbane · Greek cuisine · Overall score 4/5</p>
         </article>
         <article class="venue-card">
           <div class="photo-fallback" style="height:auto;aspect-ratio:16/10">Italian Street Kitchen · West End</div>
@@ -389,18 +431,16 @@ html.lang-en section[data-lang="en"], html.lang-zh section[data-lang="zh"]{displ
     <div class="sidebar-block" id="dates">
       <div class="sidebar-title"><span data-lang="en">Important Dates</span><span data-lang="zh">重要时间</span></div>
       <div class="date-list">
+        <div class="date-item"><time>FRIDAY · 28 AUGUST 2026</time><strong>Session #03 · Pending</strong><br>Venue and cuisine TBA</div>
+        <div class="date-item"><time>SESSION #02 · COMPLETED</time><strong>Proceedings available</strong><br>The Little Greek Taverna · 4/5</div>
         <div class="date-item"><time><span data-lang="en">SESSION #01 · COMPLETED</span><span data-lang="zh">第 01 届 · 已完成</span></time><strong><span data-lang="en">Proceedings available</span><span data-lang="zh">会议记录已发布</span></strong><br>Italian Street Kitchen · 3.5/5</div>
-        <div class="date-item"><time><span data-lang="en">FRIDAY · 18:30</span><span data-lang="zh">周五 · 18:30</span></time><strong><span data-lang="en">Session #02 dinner</span><span data-lang="zh">第 02 届聚餐</span></strong><br>Little Greek Taverna</div>
-        <div class="date-item"><time><span data-lang="en">WHEN ORDERING</span><span data-lang="zh">点菜时</span></time><strong><span data-lang="en">Dish selection closes</span><span data-lang="zh">确定本届菜品</span></strong></div>
-        <div class="date-item"><time><span data-lang="en">WHEN SERVED</span><span data-lang="zh">上菜后</span></time><strong><span data-lang="en">Tasting begins</span><span data-lang="zh">开始共同品尝</span></strong></div>
-        <div class="date-item"><time><span data-lang="en">BEFORE THE BILL</span><span data-lang="zh">结账前</span></time><strong><span data-lang="en">Overall score &amp; Best Paper</span><span data-lang="zh">总评分与 Best Paper</span></strong></div>
       </div>
     </div>
 
     <div class="sidebar-block">
-      <div class="sidebar-title"><span data-lang="en">Session #02</span><span data-lang="zh">第 02 届</span></div>
+      <div class="sidebar-title">Session #02 · Best Paper</div>
       <img class="sidebar-photo" src="https://static.wixstatic.com/media/6a11ba_fbdea355f99449a985c527dd486355bf~mv2.jpg/v1/fill/w_700,h_700,al_c,q_82/athena%20pic.jpg" alt="Greek cuisine">
-      <div class="caption"><span data-lang="en">Greek cuisine · upcoming session.</span><span data-lang="zh">希腊菜 · 下一届。</span></div>
+      <div class="caption">Garlic Prawns Pasta · The Little Greek Taverna · 4/5.</div>
     </div>
 
     <div class="sidebar-block">
@@ -427,7 +467,8 @@ html.lang-en section[data-lang="en"], html.lang-zh section[data-lang="zh"]{displ
     <div>
       <strong><span data-lang="en">Current archive</span><span data-lang="zh">当前归档</span></strong><br>
       Session #01 · Italian Street Kitchen<br>
-      Session #02 · Little Greek Taverna
+      Session #02 · The Little Greek Taverna<br>
+      Session #03 · Pending · 28 August 2026
     </div>
   </div>
   <div class="container small"><span data-lang="en">Independent private food symposium. Academic-conference language is used as a playful recording framework; SIGEAT is not affiliated with ACM or SIGIR.</span><span data-lang="zh">独立的私人美食聚餐项目。学术会议术语仅作为记录框架使用；SIGEAT 与 ACM 或 SIGIR 无隶属关系。</span></div>
